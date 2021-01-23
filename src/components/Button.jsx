@@ -1,11 +1,18 @@
 import React from 'react';
 
-const Button = () => {
+const Button = ({status, onStart, onRestart}) => {
     return (
         <div className="button">
-            <p>start</p>
+            {
+                status === "gameOver"
+                    ?
+                    <button onClick={onRestart}>Game Over</button>
+                    :
+                    <button onClick={onStart}>Start</button>
+            }
         </div>
     );
-};
+}
+
 
 export default Button;
